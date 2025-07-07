@@ -26,18 +26,21 @@ with open('data/administrations/administrations.json', 'r') as file:
 links=[]
 for a in admins:
     links.append(a['lien'])
-links[24:]
+L=links[81:]  
+print(L[0])
 #start scrapping procedures 
 try:
     driver = webdriver.Chrome(service=service, options=chrome_options)
-    
-    for link in links:
+    print(driver)
+    for link in L:
         driver.get(link)
         
         # Attendre que la page se charge complètement
         wait = WebDriverWait(driver, 30)
-        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, ".column.is-4.tile")))
-        #print("suscessfully loaded the page")
+        print(f"Loading URL: {link}")
+        print(wait)
+        wait.until(EC.presence_of_element_located((By.XPATH, "//*[@id='__layout']/div/div[2]/div[8]/div/div/div[1]")))
+        print("suscessfully loaded the page")
         # Attendre un peu plus pour que le contenu se charge
         time.sleep(3)
         
