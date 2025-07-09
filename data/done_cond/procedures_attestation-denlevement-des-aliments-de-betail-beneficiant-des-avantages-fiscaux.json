@@ -17,7 +17,10 @@
     {
         "title": "الحصول على بطاقة مهنية لصياد بحري",
         "link": "https://idaraty.tn/procedures/obtention-dune-carte-professionnelle-d-un-pecheur",
-        "administration": "وزارة الفلاحة والموارد المائيّة والصّيد البحري"
+        "administration": "وزارة الفلاحة والموارد المائيّة والصّيد البحري",
+        "conditions": {
+            "0": "السن : 15 سنة على الأقل"
+        }
     },
     {
         "title": "شهادة في صلوحية المعدّات المستوردة للإنتاج الحيواني",
@@ -27,6 +30,9 @@
     {
         "title": "شهادة في تسريح المواد العلفية المتمتعة بالامتيازات الجبائية",
         "link": "https://idaraty.tn/procedures/attestation-denlevement-des-aliments-de-betail-beneficiant-des-avantages-fiscaux",
-        "administration": "وزارة الفلاحة والموارد المائيّة والصّيد البحري"
+        "administration": "وزارة الفلاحة والموارد المائيّة والصّيد البحري",
+        "conditions": {
+            "0": "ثبوت حالة الجفاف"
+        }
     }
 ]

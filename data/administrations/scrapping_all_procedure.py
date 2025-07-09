@@ -48,7 +48,7 @@ try:
         # Collect all procedures
         procedures = []
         elements = driver.find_elements(By.CSS_SELECTOR, ".column.is-4.tile")
-        
+    
         for element in elements:
             administration_name = element.find_element(By.XPATH, "//*[@id='__layout']/div/div[2]/div[8]/div/div/div[1]/a/div[1]/div[1]/div/h4/strong").text.strip()
             title = element.find_element(By.CSS_SELECTOR, "span[data-v-f85cfe9c]").text.strip()

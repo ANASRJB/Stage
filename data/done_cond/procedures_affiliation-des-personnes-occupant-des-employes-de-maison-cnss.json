@@ -2,31 +2,49 @@
     {
         "title": "دفع تعويضات الفصل من العمل والحقوق القانونية",
         "link": "https://idaraty.tn/procedures/prise-en-charge-des-indemnites-de-licenciement-et-des-droits-legaux",
-        "administration": "الصندوق الوطني للضمان الاجتماعي"
+        "administration": "الصندوق الوطني للضمان الاجتماعي",
+        "conditions": {
+            "0": "تم الفصل لأسباب اقتصادية أو تكنولوجية أو للإغلاق الدائم وغير المتوقع للشركة دون مراعاة الإجراءات"
+        }
     },
     {
         "title": "شهادة في ممارسة نشاط فلاحي",
         "link": "https://idaraty.tn/procedures/attestation-dexcercice-d-une-activite-agricole",
-        "administration": "الصندوق الوطني للضمان الاجتماعي"
+        "administration": "الصندوق الوطني للضمان الاجتماعي",
+        "conditions": {
+            "0": "مالك مزارع لمزارعه أو مستأجر أرض زراعية أو مالك مشارك للمزرعة."
+        }
     },
     {
         "title": "انخراط المشغل (أنشطة خاضعة للتسجيل بالسجل التجاري) - الصندوق الوطني للضمان الاجتماعي",
         "link": "https://idaraty.tn/procedures/affiliation-demployeur-cnss-activites-assujetties-a-l-inscription-au-registre-de-commerce",
-        "administration": "الصندوق الوطني للضمان الاجتماعي"
+        "administration": "الصندوق الوطني للضمان الاجتماعي",
+        "conditions": {
+            "0": "صاحب العمل الذي يخضع نشاطه للتسجيل في السجل التجاري."
+        }
     },
     {
         "title": "انخراط المشغل (نشاط غير فلاحي) - الصندوق الوطني للضمان الاجتماعي",
         "link": "https://idaraty.tn/procedures/affiliation-demployeur-cnss-activite-non-agricole",
-        "administration": "الصندوق الوطني للضمان الاجتماعي"
+        "administration": "الصندوق الوطني للضمان الاجتماعي",
+        "conditions": {
+            "0": "صاحب العمل المنخرط في نشاط غير زراعي"
+        }
     },
     {
         "title": "انخراط المشغل (النشاط الفلاحي لشخص الطبيعي) - الصندوق الوطني للضمان الاجتماعي",
         "link": "https://idaraty.tn/procedures/affiliation-demployeur-activite-agricole-pour-personne-physique-cnss",
-        "administration": "الصندوق الوطني للضمان الاجتماعي"
+        "administration": "الصندوق الوطني للضمان الاجتماعي",
+        "conditions": {
+            "0": "صاحب العمل الذي يقوم بنشاط زراعي (شخص طبيعي)"
+        }
     },
     {
         "title": "انخراط الأشخاص العاملين بالبيوت - الصندوق الوطني للضمان الاجتماعي",
         "link": "https://idaraty.tn/procedures/affiliation-des-personnes-occupant-des-employes-de-maison-cnss",
-        "administration": "الصندوق الوطني للضمان الاجتماعي"
+        "administration": "الصندوق الوطني للضمان الاجتماعي",
+        "conditions": {
+            "0": "شخص يشتغل عاملات المنازل"
+        }
     }
 ]

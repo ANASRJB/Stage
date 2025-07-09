@@ -20,7 +20,7 @@ chrome_options.add_argument("--disable-gpu")
 service = Service('/usr/local/bin/chromedriver')
 
 # Open all json files in the procedures directory 
-fichiers = glob.glob('data/procedures/procedures_*.json')
+fichiers = glob.glob('data/done_cond/procedures_*.json')
 fichiers.sort()  
 tous_les_procedures=[]
 liens=[]
@@ -45,31 +45,31 @@ try:
             # Attendre que la page se charge complètement
             wait = WebDriverWait(driver, 30)
             print(f"Loading URL: {link}")
-            wait.until(EC.presence_of_element_located((By.XPATH, "//*[@id='__layout']/div/div[2]/div[4]/div[1]/div/div[2]/div[2]/div/div")))
+            wait.until(EC.presence_of_element_located((By.XPATH, "//*[@id='__layout']/div/div[2]/div[4]/div[1]/div/div[4]")))
             print("successfully loaded the page")
             # Attendre un peu plus pour que le contenu se charge
             time.sleep(3)
             
             
             try:
-                # Les conditions
-                conditions={}
-                list_cond=[]
+                # checklist
+                steps={}
+                list_steps=[]
                 l=[]
-                elements = driver.find_elements(By.XPATH, "//*[@id='__layout']/div/div[2]/div[4]/div[1]/div/div[2]/div[2]/div/div")
+                elements = driver.find_elements(By.CSS_SELECTOR, ".papers-list")
                 for element in elements:
-                    list_cond = element.find_elements(By.CSS_SELECTOR, ".media-content span")
-                for cond  in list_cond:
+                    list_steps = element.find_elements(By.CSS_SELECTOR, ".media-content span")
+                for cond  in list_steps:
                     if cond.text.strip() != "":
                         l.append(cond.text.strip())
-                print(f"Conditions found: {l}")
+                print(f"Steps found: {l}")
                 for i in range(len(l)):
-                    conditions[str(i)] = l[i]
+                    steps[str(i)] = l[i]
                         
                 for i in contenu:
                     if i['link'] == link:
-                        i['conditions'] = conditions
-                        print(f"Conditions added to procedure: {i['title']}")
+                        i['steps'] = steps
+                        print(f"Steps added to procedure: {i['title']}")
             
                 nb-=1
                 if nb==0:

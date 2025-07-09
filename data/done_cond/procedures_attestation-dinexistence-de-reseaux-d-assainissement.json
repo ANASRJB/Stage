@@ -7,26 +7,45 @@
     {
         "title": "اتفاقيّة سكب المياه المستعملة",
         "link": "https://idaraty.tn/procedures/convention-pour-le-deversement-des-eaux-usees",
-        "administration": "الديوان الوطني للتطهير"
+        "administration": "الديوان الوطني للتطهير",
+        "conditions": {
+            "0": "مطابقة نوعيّة المياه المستعملة للمواصفات الجاري بها العمل بالدّيوان الوطني للتطهير",
+            "1": "إبرام اتفاقيّة مع الدّيوان الوطني للتطهير",
+            "2": "الخلاص الشهري لمعلوم السكب"
+        }
     },
     {
         "title": "الحصول على إزالة سدادة خارجية - ﻣﺼــﺎﻟﺢ اﻟﺪّﻳﻮان اﻟﻮﻃﻨﻲ ﻟﻠﺘﻄﻬﻴﺮ",
         "link": "https://idaraty.tn/procedures/obtention-du-debouchage-externe-les-services-de-loffice-national-de-l-assainissement",
-        "administration": "الديوان الوطني للتطهير"
+        "administration": "الديوان الوطني للتطهير",
+        "conditions": {
+            "0": "يجب أن تكون السدادة بالشبكة العموميّة للتطهير وخارج العقار"
+        }
     },
     {
         "title": "شهادة في الموافقة على إنجاز أشغال التطهير",
         "link": "https://idaraty.tn/procedures/attestation-constatant-lacceptation-des-travaux-d-assainissement",
-        "administration": "الديوان الوطني للتطهير"
+        "administration": "الديوان الوطني للتطهير",
+        "conditions": {
+            "0": "وجود العقار في منطقة تدخل الديوان الوطني للتطهير",
+            "1": "انجاز الأشغال طبقا للقواعد الجاري بها العمل"
+        }
     },
     {
         "title": "شهادة في المصادقة على أمثلة إنجاز شبكة التطهير لفائدة الباعثين والشركات العقاريّة",
         "link": "https://idaraty.tn/procedures/attestation-dapprobation-de-plans-d-execution-du-reseau-d-assainissement-au-profit-des-promoteurs-et-des-societes-immobilieres",
-        "administration": "الديوان الوطني للتطهير"
+        "administration": "الديوان الوطني للتطهير",
+        "conditions": {
+            "0": "وجود العقار في منطقة تدخل الدّيوان الوطني للتطهير",
+            "1": "القيام بدراسة عن طريق مكتب دراسات"
+        }
     },
     {
         "title": "شهادة في عدم وجود تجهيزات التطهير",
         "link": "https://idaraty.tn/procedures/attestation-dinexistence-de-reseaux-d-assainissement",
-        "administration": "الديوان الوطني للتطهير"
+        "administration": "الديوان الوطني للتطهير",
+        "conditions": {
+            "0": "وجود العقار في منطقة تدخل الديوان الوطني للتطهير"
+        }
     }
 ]
