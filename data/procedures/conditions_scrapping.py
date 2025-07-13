@@ -21,11 +21,11 @@ chrome_options.add_argument("--disable-gpu")
 service = Service('/usr/local/bin/chromedriver')
 
 # Open all json files in the procedures directory 
-fichiers = glob.glob('data/done_cond/procedures_*.json')
+fichiers = glob.glob('data/procedures/procedures_*.json')
 fichiers.sort()  
 tous_les_procedures=[]
 liens=[]
-new_directory = 'data/ready_data'
+nouveau_repositoire = 'data/done_cond'
 # Function to extract links from a list of dictionaries
 def get_link(L):
     links = []
@@ -37,6 +37,7 @@ try:
     for chemin in fichiers:
         with open(chemin, 'r+', encoding='utf-8') as f:
            contenu = json.load(f)
+              
         nb=len(contenu)
         liens = get_link(contenu)
         driver = webdriver.Chrome(service=service, options=chrome_options)
@@ -46,44 +47,42 @@ try:
             # Attendre que la page se charge complètement
             wait = WebDriverWait(driver, 30)
             print(f"Loading URL: {link}")
-            wait.until(EC.presence_of_element_located((By.XPATH, "//*[@id='__layout']/div/div[2]/div[4]/div[1]/div/div[4]")))
+            wait.until(EC.presence_of_element_located((By.XPATH, "//*[@id='__layout']/div/div[2]/div[4]/div[1]/div/div[2]")))
+            
             print("successfully loaded the page")
             # Attendre un peu plus pour que le contenu se charge
             time.sleep(3)
             
             
             try:
-                # checklist
-                steps={}
-                list_steps=[]
+                # Les conditions
+                conditions={}
+                list_cond=[]
                 l=[]
-                elements = driver.find_elements(By.CSS_SELECTOR, ".papers-list")
+                elements = driver.find_elements(By.XPATH, "//*[@id='__layout']/div/div[2]/div[4]/div[1]/div/div[2]/div[2]/div/div")
+                
                 for element in elements:
-                    list_steps = element.find_elements(By.CSS_SELECTOR, ".media-content span")
-                for cond  in list_steps:
+                    list_cond = element.find_elements(By.CSS_SELECTOR, ".media-content span")
+                for cond  in list_cond:
                     if cond.text.strip() != "":
                         l.append(cond.text.strip())
-                print("Steps found")
+                print(f"Conditions found: {l}")
                 for i in range(len(l)):
-                    steps[str(i)] = l[i]
+                    conditions[str(i)] = l[i]
                         
                 for i in contenu:
                     if i['link'] == link:
-                        i['steps'] = steps
-                        print("Steps added to procedure")
+                        i['conditions'] = conditions
+                        print(f"Conditions added to procedure: {i['title']}")
             
                 nb-=1
                 if nb==0:
-                   nv_chemin=os.path.join(new_directory, os.path.basename(chemin))
+                   nv_chemin=os.path.join(nouveau_repositoire, os.path.basename(chemin))
                    with open(chemin,'w',encoding="utf-8") as f:
                        json.dump(contenu, f, ensure_ascii=False,indent=4)
-                   shutil.move(chemin, nv_chemin)   
+                   shutil.move(chemin, nv_chemin)
             except Exception as e:
                 print(f"Erreur lors de collection : {e}")
             
 except Exception as e:
     print(f"Erreur lors de la lecture des fichiers JSON : {e}")
-
-
-
-

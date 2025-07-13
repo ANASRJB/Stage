@@ -1,0 +1,77 @@
+[
+    {
+        "title": "إيداع تصريح بالتخفيضات الموسمية",
+        "link": "https://idaraty.tn/procedures/depot-de-declarations-des-soldes",
+        "administration": "وزارة التجارة وتنمية الصادرات",
+        "conditions": {},
+        "steps": {
+            "0": "أكمل النموذج عبر الإنترنت"
+        }
+    },
+    {
+        "title": "إيداع ومتابعة الشكايات الخاصة بالسياح",
+        "link": "https://idaraty.tn/procedures/depot-et-suivi-des-reclamations-des-touristes",
+        "administration": "وزارة التجارة وتنمية الصادرات",
+        "conditions": {},
+        "steps": {
+            "0": "إيداع الشكايات الخاصة بالسياح",
+            "1": "متابعة الشكايات الخاصة بالسياح"
+        }
+    },
+    {
+        "title": "إيداع ومتابعة الشكايات الخاصة بالمستهلكين",
+        "link": "https://idaraty.tn/procedures/depot-et-suivi-des-reclamations-des-consommateurs",
+        "administration": "وزارة التجارة وتنمية الصادرات",
+        "conditions": {
+            "0": "الشكوى تتعلق بأحد هذه القطاعات (مخابز ، خضار وفواكه ، منتجات غذائية ، دواجن ولحوم)"
+        },
+        "steps": {
+            "0": "إيداع الشكايات الخاصة بالمستهلكين",
+            "1": "متابعة الشكايات الخاصة بالمستهلكين"
+        }
+    },
+    {
+        "title": "إيداع ومتابعة الشكايات الخاصة بالمهنيين",
+        "link": "https://idaraty.tn/procedures/depot-et-suivi-des-reclamations-des-professionnels",
+        "administration": "وزارة التجارة وتنمية الصادرات",
+        "conditions": {},
+        "steps": {
+            "0": "إيداع الشكايات الخاصة بالمهنيين",
+            "1": "الشكايات الخاصة بالمستهلكين"
+        }
+    },
+    {
+        "title": "رخصة لتوريد محرك للاستعمال الشخصي لتونسي مقيم بالخارج",
+        "link": "https://idaraty.tn/procedures/autorisation-dimportation-d-un-moteur-pour-usage-personnel-par-un-tunisien-resident-a-l-etranger",
+        "administration": "وزارة التجارة وتنمية الصادرات",
+        "conditions": {
+            "0": "أن يكون تونسي مقيم بالخارج"
+        },
+        "steps": {
+            "0": "مطبوعة رخصة توريد (غرفة التجارة)",
+            "1": "نسخة من بطاقة التعريف الوطنية",
+            "2": "نسخة من جواز سفر",
+            "3": "نسخة من بطاقة إقامة",
+            "4": "وصل الحجز الديواني",
+            "5": "نسخة من البطاقة الرمادية لإثبات ملكية السيارة أو الشاحنة أو الجرار"
+        }
+    },
+    {
+        "title": "رخصة لتوريد دراجة نارية لتونسي مقيم بالخارج",
+        "link": "https://idaraty.tn/procedures/autorisation-dimportation-d-un-moto-par-un-tunisien-resident-a-l-etranger",
+        "administration": "وزارة التجارة وتنمية الصادرات",
+        "conditions": {
+            "0": "أن يكون تونسي مقيم بالخارج"
+        },
+        "steps": {
+            "0": "مطبوعة رخصة توريد (غرفة التجارة)",
+            "1": "نسخة من بطاقة التعريف الوطنية",
+            "2": "نسخة من جواز سفر",
+            "3": "نسخة من بطاقة إقامة",
+            "4": "وصل الحجز الديواني",
+            "5": "نسخة من البطاقة رمادية",
+            "6": "فاتورة شراء",
+            "7": "سعة الاسطوانة أقل من 125صم3"
+        }
+    }
+]
