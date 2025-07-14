@@ -45,7 +45,7 @@ vectorstore = FAISS.from_documents(chunks, embedding_model)
 vectorstore.save_local("vectorstores/procedures_faiss")
 
 # 6. Save documents
-with open("stage/documents.pkl", "wb") as f:
+with open("data/documents.pkl", "wb") as f:
     pickle.dump(docs, f)
 
-print("✅ JSON loaded, embedded and indexed with FAISS.")
+print("JSON loaded, embedded and indexed with FAISS.")
