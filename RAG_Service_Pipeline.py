@@ -21,3 +21,20 @@ class RAG_SERVICE:
             self.embedding_model,
             allow_dangerous_deserialization=True
         )
+    # Method to search for similar documents based on a query
+    def search_similar_documents(self, query: str, k: int = 5) -> List[Document]:
+        return self.vectorstore.similarity_search(query, k=k)
+    # Context format
+    def format_context(self, documents: List[Document]) -> str:
+        parts = []
+        for i, doc in enumerate(documents,1):
+            title= doc.metadata.get("title","بدون عنوان")   
+            administration= doc.metadata.get("administration","بدون إدارة")
+            source= doc.metadata.get("source","بدون مصدر")
+            content = doc.page_content
+            parts.append(f"المستند {i}:\n\n"
+                         f"العنوان: {title}\n"
+                         f"الإدارة: {administration}\n"
+                         f"المصدر: {source}\n\n"
+                         f"{content}\n")
+        return "\n".join(parts)

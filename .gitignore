@@ -28,14 +28,6 @@ wheels/
 *.egg
 MANIFEST
 
-# Data files (you might want to keep some of these)
-*.pkl
-*.pickle
-*.csv
-*.json
-*.db
-*.sqlite3
-
 # IDE
 .vscode/
 .idea/
