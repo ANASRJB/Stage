@@ -8,7 +8,7 @@ class RAG_SERVICE:
     _embedding_models = {}
     _vectorstores = {}
     # Constructor to initialize the vector store and embedding model
-    def __init__(self, vector_store_path:str, embedding_model_name: str = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",cache_size: int = 100):
+    def __init__(self, vector_store_path:str, embedding_model_name: str = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",cache_size: int = 100,llm_service=None):
         self.vector_store_path = vector_store_path
         self.embedding_model_name = embedding_model_name
         self.vectorstore = None
@@ -16,7 +16,7 @@ class RAG_SERVICE:
         self._load_vectorstore()
         # Cache the search results to improve performance
         self._cached_search = lru_cache(maxsize=cache_size)(self._internal_search)
-
+        self.llm_service = llm_service
     # Load the vector store from the specified path
     def _load_vectorstore(self):
         cache_key = f"{self.vector_store_path}_{self.embedding_model_name}"
@@ -99,4 +99,19 @@ class RAG_SERVICE:
             "vector_store_path": self.vector_store_path,
             "embedding_model": self.embedding_model_name,
             "is_loaded": self.vectorstore is not None
+        }
+    def answer_question(self, question: str, k: int = 3) -> Dict[str, Any]:
+    # Get context using existing query method
+        retrieval_result = self.query(question, k)
+    
+        if not retrieval_result["context"] or not self.llm_service:
+          return {"answer": "لا توجد معلومات كافية", **retrieval_result}
+    
+        # Generate answer
+        answer = self.llm_service.generate_response(question, retrieval_result["context"])
+    
+        return {
+        "answer": answer,
+        "retrieved_docs": retrieval_result["Retrived_doc"],
+        "context": retrieval_result["context"]
         }
