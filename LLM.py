@@ -3,7 +3,7 @@ from langchain_ollama.llms import OllamaLLM
 from RAG_Service_Pipeline import RAG_SERVICE
 
 # Instanciation of the RAG pipeline
-rag = RAG_SERVICE("vectorstores/procedures_faiss")
+rag = RAG_SERVICE(r"C:\Users\MSI\Documents\chatbot\Stage\vectorstores\procedures_faiss")
 # prompt template to enhance the response of the LLM
 message=""" 
 أنت مساعد ذكي ومفيد. استخدم السياق المقدم للإجابة على الأسئلة بدقة.
@@ -24,13 +24,15 @@ message="""
 prompt_template= ChatPromptTemplate.from_messages([("human", message)])
 
 #LLM creation 
-llm=OllamaLLM(model="llama3.1:8b")
+llm=OllamaLLM(model="llama3.1:8b",temperature=0.0)
 # chaining
 chain= prompt_template | llm
 
-rag_question=input("Ask me!")
-response=rag.query(rag_question)
-context=response["context"]
+
 # Answer generation
-answer= chain.invoke({"context":context,"question":rag_question})
-print(answer)
+def get_bot_answer(question: str) -> str:
+    response = rag.query(question)
+    context = response["context"]
+    return chain.invoke({"context": context, "question": question})
+
+print(get_bot_answer("تجديد بطاقة التعريف الوطنية"))
