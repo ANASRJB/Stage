@@ -1,1 +1,0 @@
-out = chain.invoke({"context": context, "question": question})
